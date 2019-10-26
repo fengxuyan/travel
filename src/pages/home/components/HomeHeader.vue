@@ -26,7 +26,7 @@
         display: flex;
         /*align-items: center;*/
         /*justify-content: space-between;*/
-        font-size: .3rem;
+        font-size: .25rem;
         height: .86rem;
         line-height: .86rem;
         background: $bgColor;
