@@ -104,7 +104,7 @@
 
     .wraper {
         /*background: green;*/
-        font-size: .25rem;
+        font-size: .28rem;
 
     .icon {
         float: left;
@@ -119,7 +119,8 @@
         left: 0;
         right: 0;
         top: 0;
-        bottom: .4rem;
+        bottom: .3rem;
+        padding: .2rem;
 
     img {
         display: block;
