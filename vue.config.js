@@ -42,26 +42,26 @@ module.exports = {
     // parallel: require('os').cpus().length > 1, // 是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建。
     pwa: {}, // PWA 插件相关配置 see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
     // webpack-dev-server 相关配置
-    // devServer: {
-    //     open: process.platform === 'darwin',
-    //     host: '0.0.0.0', // 允许外部ip访问
-    //     port: 8022, // 端口
-    //     https: false, // 启用https
-    //     overlay: {
-    //         warnings: true,
-    //         errors: true
-    //     }, // 错误、警告在页面弹出
-    //     proxy: {
-    //         '/api': {
-    //             target: 'http://www.baidu.com/api',
-    //             changeOrigin: true, // 允许websockets跨域
-    //             // ws: true,
-    //             pathRewrite: {
-    //                 '^/api': ''
-    //             }
-    //         }
-    //     } // 代理转发配置，用于调试环境
-    // },
+    devServer: {
+        // open: process.platform === 'darwin',
+        // host: '0.0.0.0', // 允许外部ip访问
+        port: 8081, // 端口
+        // https: false, // 启用https
+        // overlay: {
+        //     warnings: true,
+        //     errors: true
+        // }, // 错误、警告在页面弹出
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8081',
+                changeOrigin: true, // 允许websockets跨域
+                // ws: true,
+                pathRewrite: {
+                    '^/api': '/mock'
+                }
+            }
+        } // 代理转发配置，用于调试环境
+    },
     // 第三方插件配置
     pluginOptions: {}
 }
