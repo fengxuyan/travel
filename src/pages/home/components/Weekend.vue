@@ -38,8 +38,10 @@
     .item-img-wrapper {
         overflow: hidden;
         height: 0;
-        height: 100%;
-        /*padding-bottom: 37.09%;*/
+        padding-bottom: 37.09%;
+        img {
+            width:100%;
+        }
     }
 
     .item-info {
