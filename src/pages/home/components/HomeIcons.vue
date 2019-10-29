@@ -74,7 +74,7 @@
         right: 0;
         top: 0;
         bottom: .3rem;
-        padding: .2rem;
+        padding: .35rem;
 
     img {
         display: block;
