@@ -63,7 +63,7 @@
     .item-desc {
         ellipsis();
         line-height: .45rem;
-        font-size: .25rem;
+        font-size: .26rem;
         color: #ccc;
     }
 
@@ -74,6 +74,7 @@
         border-radius: 3px;
         color: #fff;
         border: 0;
+        font-size: .26rem;
     }
 
     }
