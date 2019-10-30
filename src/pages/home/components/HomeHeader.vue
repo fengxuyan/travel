@@ -7,17 +7,19 @@
             <span class="iconfont">&#xe632;</span>
             输入城市/景点/主题/游玩
         </div>
-        <div class="header-right">
-            {{city}}
-            <span class="iconfont arrow-icon">&#xe600;</span>
-        </div>
+        <router-link to="/city">
+            <div class="header-right">
+                {{city}}
+                <span class="iconfont arrow-icon">&#xe600;</span>
+            </div>
+        </router-link>
     </div>
 </template>
 
 <script>
     export default {
         name: "HomeHeader",
-        props:{
+        props: {
             city: String
         }
     }
@@ -27,11 +29,9 @@
     @import "~@s/varibles.styl";
     .header {
         display: flex;
-        /*align-items: center;*/
-        /*justify-content: space-between;*/
-        font-size: .28rem;
-        height: .86rem;
-        line-height: .86rem;
+        font-size: .3rem;
+        height: $hederHeight;
+        line-height: $hederHeight;
         background: $bgColor;
         color: #fff;
 
@@ -45,10 +45,13 @@
         width: 1.24rem;
         float: right;
         text-align: center;
-        .arrow-icon {
-            vertical-align: bottom;
-            font-size: .2rem;
-        }
+    color: #fff;
+
+    .arrow-icon {
+        vertical-align: bottom;
+        font-size: .2rem;
+    }
+
     }
 
     .header-input {

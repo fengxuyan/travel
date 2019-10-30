@@ -10,11 +10,11 @@
 
 <script>
     // @ is an alias to /src
-    import HomeHeader from '@p/home/components/HomeHeader.vue';
-    import HomeSwiper from '@p/home/components/HomeSwiper.vue'
-    import HomeIcons from '@p/home/components/HomeIcons.vue'
-    import Recommend from '@p/home/components/Recommend.vue'
-    import Weekend from '@p/home/components/Weekend.vue'
+    import HomeHeader from './components/HomeHeader.vue';
+    import HomeSwiper from './components/HomeSwiper.vue'
+    import HomeIcons from './components/HomeIcons.vue'
+    import Recommend from './components/Recommend.vue'
+    import Weekend from './components/Weekend.vue'
 
     import axios from 'axios'
 
