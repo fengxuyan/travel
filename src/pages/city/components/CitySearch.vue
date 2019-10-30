@@ -16,6 +16,7 @@
     .search {
         padding: .1rem;
         background-color: $bgColor;
+        padding-top: 0;
     .search-input {
         display: block;
         box-sizing: border-box;
@@ -29,6 +30,7 @@
         border: none;
         text-align: center;
         color:#666;
+        font-size: .3rem;
     }
 
     }

@@ -60,7 +60,7 @@
     .wrapper {
         overflow: hidden;
         position: absolute;
-        top: 1.7rem;
+        top: 1.8rem;
         left: 0;
         right: 0;
         bottom: 0;
@@ -84,15 +84,12 @@
     .button {
         margin: .1rem .2rem;
         padding: .15rem 0;
-        border: .02rem solid #ccc;
+        border: 1px solid #eee;
         text-align: center;
         font-size: .26rem;
         color: #666;
     }
-
     }
-
-
     }
 
     .item-list {
@@ -100,9 +97,8 @@
         color: #666;
         .item {
             padding-left: .2rem;
-            line-height: .6rem;
-            height: .6rem;
-
+            line-height: .8rem;
+            height: .8rem;
         }
     }
 </style>

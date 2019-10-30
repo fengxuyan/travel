@@ -29,7 +29,7 @@
             text-align: center;
             line-height: .42rem;
             color: #00bcd4;
-            font-size: .3rem;
+            font-size: .26rem;
         }
     }
 
