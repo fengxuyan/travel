@@ -1,6 +1,11 @@
 <template>
     <div>
-        <detail-banner></detail-banner>
+        <detail-banner
+                :swiperlist="swiperlist"
+                :sightName="sightName"
+                :bannerImg="bannerImg"
+                :commentsNum="commentsNum"
+        ></detail-banner>
         <detail-header></detail-header>
         <detail-list :list="list"></detail-list>
         <div class="content"></div>
@@ -11,6 +16,8 @@
     import DetailBanner from './components/DetailBanner.vue'
     import DetailHeader from './components/DetailHeader.vue'
     import DetailList from './components/DetailList.vue'
+    import axios from 'axios'
+
     export default {
         name: "Detail",
         components:{
@@ -20,25 +27,36 @@
         },
         data(){
             return{
-                list:[
-                    {
-                        title:'成人票',
-                        children:[
-                            {title:'成人3馆联票',
-                                children:[
-                                    {title:'成人3馆联票'},
-                                    {title:'成人3馆联票'},
-                                    {title:'成人3馆联票'}
-                                ]},
-                            {title:'成人3馆联票'},
-                            {title:'成人3馆联票'}
-                        ]
-                    },
-                    {title:'儿童票'},
-                    {title:'学生票'}
-                    ]
+                list:[],
+                swiperlist:[],
+                sightName:'',
+                bannerImg:'',
+                commentsNum:0,
             }
-        }
+        },
+        methods:{
+            getDetail(){
+                axios.get('/api/detail.json',{
+                    params:{
+                        id:this.$route.params.id
+                    }
+                })
+                    .then(res=>{
+                        if(res.data.ret && res.data.data){
+                            const data = res.data.data;
+                            this.list = data.categoryList;
+                            this.swiperlist=data.gallaryImgs;
+                            this.sightName=data.sightName;
+                            this.bannerImg=data.bannerImg;
+                            this.commentsNum=data.commentsNum;
+                        }
+
+                    })
+            }
+        },
+        mounted(){
+            this.getDetail()
+        },
     }
 </script>
 

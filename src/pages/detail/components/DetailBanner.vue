@@ -2,10 +2,10 @@
     <div>
     <div class="wrapper" @click="handleShowGallery">
         <img class="banner-img"
-             src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg"/>
+             :src="bannerImg"/>
         <div class="banner-info">
-            <div class="info-left">故宫(AAAAA景区)</div>
-            <div class="info-right"><span class="iconfont back-icon">&#xe6bd;</span>12</div>
+            <div class="info-left">{{sightName}}</div>
+            <div class="info-right"><span class="iconfont back-icon">&#xe6bd;</span>{{commentsNum}}</div>
         </div>
     </div>
         <common-gallery :swiperlist="swiperlist" v-show="showGallery" @galleryClose="handleCloseGallery"></common-gallery>
@@ -16,12 +16,15 @@
     import CommonGallery from 'common/gallery/Gallery.vue'
     export default {
         name: "DetailBanner",
+        props:{
+            swiperlist:Array,
+            sightName: String,
+            bannerImg:String,
+            commentsNum:Number
+        },
         data(){
           return{
               showGallery:false,
-              swiperlist:[
-                  'http://img1.qunarzz.com/sight/p0/1909/4e/4e1afc2e1133ade7a3.img.jpg_r_800x800_d3eb324d.jpg',
-                  'http://img1.qunarzz.com/sight/p0/1909/4e/4e1afc2e1133ade7a3.img.jpg_r_800x800_d3eb324d.jpg']
           }
         },
         methods:{

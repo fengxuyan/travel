@@ -17,7 +17,7 @@
         name: "DetailList",
         props: {
             list: Array
-        }
+        },
     }
 </script>
 
