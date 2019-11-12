@@ -23,7 +23,8 @@ module.exports = {
                     '@': path.resolve(__dirname, './src'),
                     '@c': path.resolve(__dirname, './src/components'),
                     '@s': path.resolve(__dirname, './src/assets/styles'),
-                    '@p': path.resolve(__dirname, './src/pages')
+                    '@p': path.resolve(__dirname, './src/pages'),
+                    'common': path.resolve(__dirname, './src/common')
                 } // 别名配置
             }
         })
