@@ -72,6 +72,7 @@
         left: 0;
         right: 0;
         overflow: hidden;
+        z-index: 3;
         text-align: center;
         height: $hederHeight;
         line-height: $hederHeight;
