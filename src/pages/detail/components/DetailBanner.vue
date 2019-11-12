@@ -15,7 +15,7 @@
 <script>
     import CommonGallery from 'common/gallery/Gallery.vue'
     export default {
-        name: "Banner",
+        name: "DetailBanner",
         data(){
           return{
               showGallery:false,
@@ -57,13 +57,14 @@
         align-items: center;
         justify-content: space-between;
         bottom: 0;
-        left: .3rem;
-        right: .3rem;
+        left: 0;
+        right: 0;
+        padding: 0 .3rem;
         font-size: 0.32rem;
         color: #fff;
         line-height: .8rem;
 
-        background-image:linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,.8));
+        background-image:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.8));
 
     .info-right {
         background-color: rgba(0,0,0,0.8);
