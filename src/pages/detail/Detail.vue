@@ -32,6 +32,7 @@
                 sightName:'',
                 bannerImg:'',
                 commentsNum:0,
+                lastid:null
             }
         },
         methods:{
@@ -49,14 +50,21 @@
                             this.sightName=data.sightName;
                             this.bannerImg=data.bannerImg;
                             this.commentsNum=data.commentsNum;
+                            this.lastid=this.$route.params.id;
                         }
 
                     })
             }
         },
         mounted(){
+            this.lastid=this.$route.params.id;
             this.getDetail()
         },
+        activated(){
+            if(this.lastid !== this.$route.params.id){
+                this.getDetail()
+            }
+        }
     }
 </script>
 

@@ -26,6 +26,7 @@
         },
         methods:{
             handleScroll(){
+                window.console.log('hi')
                 const top=document.documentElement.scrollTop;
                 if(top>60){
                     const opacity= top / 140;

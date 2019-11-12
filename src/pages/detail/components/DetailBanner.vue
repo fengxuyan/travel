@@ -8,12 +8,15 @@
             <div class="info-right"><span class="iconfont back-icon">&#xe6bd;</span>{{commentsNum}}</div>
         </div>
     </div>
+        <fade-animation>
         <common-gallery :swiperlist="swiperlist" v-show="showGallery" @galleryClose="handleCloseGallery"></common-gallery>
+        </fade-animation>
     </div>
 </template>
 
 <script>
     import CommonGallery from 'common/gallery/Gallery.vue'
+    import FadeAnimation from 'common/fade/FadeAnimation.vue'
     export default {
         name: "DetailBanner",
         props:{
@@ -32,12 +35,12 @@
                 this.showGallery=true;
             },
             handleCloseGallery(){
-                window.console.log('hhheil')
                 this.showGallery=false;
             }
         },
         components:{
-            CommonGallery
+            CommonGallery,
+            FadeAnimation
         }
     }
 </script>
