@@ -1,10 +1,10 @@
 const path = require('path')
 
 module.exports = {
-    // publicPath: './', // 基本路径
-    // outputDir: 'dist', // 输出文件目录
-    // lintOnSave: false, // eslint-loader 是否在保存的时候检查
-    // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
+    publicPath: './', // 根路径
+    outputDir: 'dist', // 构建输出目录
+    assetsDir: 'assets', // 静态资源目录(js,css,img,fonts)
+    // lintOnSave: false, // 是否开启eslint保存检测,有效值（true||false||error)
     // webpack配置
     chainWebpack: (config) => {
     },
@@ -29,7 +29,7 @@ module.exports = {
             }
         })
     },
-    // productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
+    productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
     // css相关配置
     // css: {
     //     extract: true, // 是否使用css分离插件 ExtractTextPlugin
@@ -38,16 +38,17 @@ module.exports = {
     //         css: {}, // 这里的选项会传递给 css-loader
     //         postcss: {} // 这里的选项会传递给 postcss-loader
     //     }, // css预设器配置项 详见https://cli.vuejs.org/zh/config/#css-loaderoptions
-    //     modules: false // 启用 CSS modules for all css / pre-processor files.
+    //     requireModuleExtension: true // 启用 CSS modules for all css / pre-processor files.
     // },
     // parallel: require('os').cpus().length > 1, // 是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建。
     pwa: {}, // PWA 插件相关配置 see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
     // webpack-dev-server 相关配置
     devServer: {
-        // open: process.platform === 'darwin',
-        // host: '0.0.0.0', // 允许外部ip访问
-        port: 8081, // 端口
+        open: process.platform === 'darwin',
+        host: '0.0.0.0', // 允许外部ip访问
+        // port: 8081, // 端口
         // https: false, // 启用https
+        // hotOnly: false, // 热更新
         // overlay: {
         //     warnings: true,
         //     errors: true

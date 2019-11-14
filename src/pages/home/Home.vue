@@ -42,7 +42,11 @@
         },
         methods: {
             getHomeInfo() {
-                axios.get('/api/index.json?city=' + this.city)
+                axios.get('/api/index.json' , {
+                    params: {
+                        city: this.city
+                    }
+                })
                     .then(res=>{
                         if(res.data.ret && res.data.data){
                             const data = res.data.data;

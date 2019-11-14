@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div class="wrapper" @click="handleShowGallery">
+    <div class="wrapper"  @click="handleShowGallery">
         <img class="banner-img"
              :src="bannerImg"/>
         <div class="banner-info">
