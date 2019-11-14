@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper-detailheader" ref="detailheader">
         <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
             <span class="iconfont back-icon">&#xe624;</span>
         </router-link>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+    // import BScroll from "better-scroll"
     export default {
         name: "DetailHeader",
         data(){
@@ -26,11 +27,14 @@
         },
         methods:{
             handleScroll(){
-                window.console.log('hi')
-                const top=document.documentElement.scrollTop;
+                const top = document.documentElement.scrollTop ||
+                    window.pageYOffset ||
+                    document.body.scrollTop ||
+                    document.querySelector('.wrapper-detailheader').scrollTop;
+
                 if(top>60){
                     const opacity= top / 140;
-                    opacity>1 ?1 : opacity;
+                    opacity >1 ?1 : opacity;
                     this.opacityStyle={
                         opacity: opacity
                     }
@@ -42,7 +46,8 @@
             }
         },
         activated(){
-            window.addEventListener('scroll',this.handleScroll)
+            let _this = this
+            window.addEventListener('scroll',_this.handleScroll)
         },
         deactivated(){
             window.removeEventListener('scroll',this.handleScroll)
@@ -52,7 +57,13 @@
 
 <style scoped lang="stylus">
     @import "~@s/varibles.styl";
-
+.wrapper-detailheader {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
     .header-abs {
     display: flex;
     align-items: center;

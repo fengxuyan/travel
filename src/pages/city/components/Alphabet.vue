@@ -1,11 +1,11 @@
 <template>
     <ul class="list">
-        <li class="item" @touchmove.prevent
+        <li class="item"
             v-for="item of letters"
             :key="item"
             :ref="item"
             @click="handleletterclick"
-            @touchstart="handleTouchStart"
+            @touchstart.prevent="handleTouchStart"
             @touchmove="handleTouchMove"
             @touchend="handleTouchEnd"
         >
