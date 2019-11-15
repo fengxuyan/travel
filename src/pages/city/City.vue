@@ -40,7 +40,7 @@
         },
         methods:{
             getCityInfo:function () {
-                axios.get('/api/city.json')
+                axios.get('/api/city')
                     .then(res=>{
                         if(res.data.ret && res.data.data){
                             const data = res.data.data;

@@ -42,7 +42,7 @@
         },
         methods: {
             getHomeInfo() {
-                axios.get('/api/index.json' , {
+                axios.get('/api/index' , {
                     params: {
                         city: this.city
                     }
